@@ -1,0 +1,45 @@
+.select-position {
+    margin-top: 30px;
+}
+
+.searchbutton-position {
+    float: right;
+    width: 30%;
+}
+
+:host ::ng-deep .ant-tree {
+    overflow: hidden;
+    margin: 0 -24px;
+    padding: 0 24px;
+}
+
+:host ::ng-deep .ant-tree li {
+    padding: 4px 0 0 0;
+}
+
+.custom-node {
+    cursor: pointer;
+    line-height: 24px;
+    margin-left: 4px;
+    display: inline-block;
+    margin: 0 -1000px;
+    padding: 0 1000px;
+}
+
+.active {
+    background: #1890FF;
+    color: #fff;
+}
+
+.tree-text-position {
+    margin-left: 3px;
+}
+
+.reset-position {
+    width: 100px;
+}
+
+.save-position {
+    width: 100px;
+    float: right;
+}

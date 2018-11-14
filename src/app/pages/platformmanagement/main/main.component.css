@@ -1,0 +1,38 @@
+.select-position {
+    width: 95%;
+    margin-left: 3px;
+}
+
+.datapicker-position {
+    margin-left: 3px;
+}
+
+.close-icon-position {
+    margin-right: 5%;
+}
+
+:host ::ng-deep .trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color .3s;
+}
+
+:host ::ng-deep .trigger:hover {
+    color: #1890ff;
+}
+
+:host ::ng-deep .logo {
+    height: 32px;
+    margin: 16px;
+}
+
+:host ::ng-deep .ant-input-group .ant-input {
+    float: none;
+}
+
+:host ::ng-deep .ant-calendar-picker {
+    width: 98% !important;
+    padding-right: 3px;
+}

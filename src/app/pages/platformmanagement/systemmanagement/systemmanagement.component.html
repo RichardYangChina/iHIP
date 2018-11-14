@@ -1,0 +1,149 @@
+<div nz-row>
+  <div nz-col nzSpan="4">
+    <button nz-button nzType="primary" (click)="createTplModal(tplTitle, tplContent, tplFooter)">
+      <span>添加</span>
+    </button>
+    <ng-template #tplTitle>
+      <span>添加系统</span>
+    </ng-template>
+    <ng-template #tplContent>
+      <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+        <div nz-row>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label [nzSm]="5" nzFor="systemName" nzRequired>
+                <span>
+                  系统名称
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="16">
+                <input nz-input id="systemName" formControlName="systemName">
+                <nz-form-explain *ngIf="validateForm.get('systemName').dirty && validateForm.get('systemName').errors">请输入系统名称！</nz-form-explain>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label [nzSm]="5" nzFor="systemCode" nzRequired>
+                <span>
+                  系统代码
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="16">
+                <input nz-input id="systemCode" formControlName="systemCode">
+                <nz-form-explain *ngIf="validateForm.get('systemCode').dirty && validateForm.get('systemCode').errors">请输入系统代码！</nz-form-explain>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-row>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label [nzSm]="5" nzFor="status" nzRequired>
+                <span>
+                  启用状态
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="16">
+                <nz-select id="status" formControlName="status">
+                  <nz-option nzValue="启用" nzLabel="启用"></nz-option>
+                  <nz-option nzValue="禁用" nzLabel="禁用"></nz-option>
+                </nz-select>
+                <nz-form-explain *ngIf="validateForm.get('status').dirty && validateForm.get('status').errors">请选择启用状态！</nz-form-explain>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label [nzSm]="5" nzFor="company">
+                <span>
+                  厂商
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="16">
+                <input nz-input id="company" formControlName="company">
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-row>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label [nzSm]="5" nzFor="systemType" nzRequired>
+                <span>
+                  系统类型
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="16">
+                <nz-select id="systemType" formControlName="systemType">
+                  <nz-option nzValue="CS" nzLabel="CS"></nz-option>
+                  <nz-option nzValue="BS" nzLabel="BS"></nz-option>
+                </nz-select>
+                <nz-form-explain *ngIf="validateForm.get('systemType').dirty && validateForm.get('systemType').errors">请选择系统类型！</nz-form-explain>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label [nzSm]="5" nzFor="systemPurpose" nzRequired>
+                <span>
+                  系统用途
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="16">
+                <nz-select id="systemPurpose" formControlName="systemPurpose">
+                  <nz-option nzValue="两者都有" nzLabel="两者都有"></nz-option>
+                  <nz-option nzValue="单点登陆" nzLabel="单点登陆"></nz-option>
+                  <nz-option nzValue="业务对接" nzLabel="业务对接"></nz-option>
+                </nz-select>
+                <nz-form-explain *ngIf="validateForm.get('systemPurpose').dirty && validateForm.get('systemPurpose').errors">请选择系统用途！</nz-form-explain>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-row>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label [nzSm]="5" nzFor="comments">
+                <span>
+                  备注
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="16">
+                <textarea id="comments" formControlName="comments" rows="4" nz-input></textarea>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="12">
+            <div class="clearfix">
+              <nz-upload nzListType="picture-card" [nzBeforeUpload]="beforeUpload" [(nzFileList)]="fileList"
+                [nzShowButton]="fileList.length < 2" [nzPreview]="handlePreview">
+                <i nz-icon type="plus"></i>
+                <div class="ant-upload-text">上传</div>
+              </nz-upload>
+              <nz-modal [nzVisible]="previewVisible" [nzContent]="modalContent" [nzFooter]="null" (nzOnCancel)="previewVisible=false">
+                <ng-template #modalContent>
+                  <img [src]="previewImage" [ngStyle]="{ 'width': '100%' }" />
+                </ng-template>
+              </nz-modal>
+            </div>
+          </div>
+        </div>
+      </form>
+    </ng-template>
+    <ng-template #tplFooter>
+      <button nz-button nzType="primary" (click)="destroyTplModal()" [nzLoading]="tplModalButtonLoading">提交</button>
+    </ng-template>
+  </div>
+  <div nz-col nzSpan="20">
+    <nz-input-group nzSearch nzSize="default" [nzSuffix]="suffixButton">
+      <input type="text" nz-input placeholder="搜索系统">
+    </nz-input-group>
+    <ng-template #suffixButton>
+      <button nz-button nzType="primary" nzSize="default" nzSearch>搜索</button>
+    </ng-template>
+  </div>
+</div>
+<div nz-row class="table-position">
+  <app-simpletable (action)="itemOperate($event, tplTitle, tplContent, tplFooter)"></app-simpletable>
+</div>

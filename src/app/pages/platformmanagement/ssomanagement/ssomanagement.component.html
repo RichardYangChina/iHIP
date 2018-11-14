@@ -1,0 +1,96 @@
+<div nz-row>
+  <div nz-col nzSpan="4">
+    <button nz-button nzType="primary" (click)="createTplModal(tplTitle, tplContent, tplFooter)">
+      <span>添加</span>
+    </button>
+    <ng-template #tplTitle>
+      <span>系统详情</span>
+    </ng-template>
+    <ng-template #tplContent>
+      <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+        <div nz-row>
+          <div nz-col nzSpan="4">
+            <nz-skeleton [nzAvatar]="false" [nzParagraph]="false" [nzLoading]="">
+              <img [src]="showImg" class="img-size" />
+            </nz-skeleton>
+          </div>
+          <div nz-col nzSpan="20">
+            <div nz-row>
+              <nz-form-item>
+                <nz-form-label [nzSm]="7" nzFor="system" nzRequired>
+                  <span>
+                    系统
+                  </span>
+                </nz-form-label>
+                <nz-form-control [nzSm]="16">
+                  <nz-select id="system" formControlName="system" (ngModelChange)="selectedChanged($event)">
+                    <nz-option *ngFor="let sysItem of systemList" [nzValue]="sysItem" [nzLabel]="sysItem?.sysName"></nz-option>
+                  </nz-select>
+                  <nz-form-explain *ngIf="validateForm.get('system').dirty && validateForm.get('system').errors">请选择系统！</nz-form-explain>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+            <div nz-row>
+              <nz-form-item>
+                <nz-form-label [nzSm]="7" nzFor="systemType">
+                  <span>
+                    系统类型
+                  </span>
+                </nz-form-label>
+                <nz-form-control [nzSm]="16">
+                  <input nz-input id="systemType" formControlName="systemType" disabled>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+            <div nz-row>
+              <nz-form-item>
+                <nz-form-label [nzSm]="7" nzFor="systemURL">
+                  <span>
+                    系统路径
+                  </span>
+                </nz-form-label>
+                <nz-form-control [nzSm]="16">
+                  <input nz-input placeholder="（BS路径:（http(s)://www.baidu.com）,CS路径格:（E:\abc.exe））" id="systemURL"
+                    formControlName="systemURL">
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+          </div>
+        </div>
+      </form>
+    </ng-template>
+    <ng-template #tplFooter>
+      <button nz-button nzType="primary" (click)="destroyTplModal()" [nzLoading]="tplModalButtonLoading">提交</button>
+    </ng-template>
+  </div>
+  <div nz-col nzSpan="20">
+    <nz-input-group nzSearch nzSize="default" [nzSuffix]="suffixButton">
+      <input type="text" nz-input placeholder="搜索系统">
+    </nz-input-group>
+    <ng-template #suffixButton>
+      <button nz-button nzType="primary" nzSize="default" nzSearch>搜索</button>
+    </ng-template>
+  </div>
+</div>
+<div nz-row class="table-position">
+  <nz-table #basicTable [nzData]="dataSet">
+    <thead>
+      <tr>
+        <th>系统名称</th>
+        <th>系统路径</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{data.resName}}</td>
+        <td>{{data.resUrl}}</td>
+        <td>
+          <a (click)="itemOperate('update', data, tplTitle, tplContent, tplFooter)">修改</a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a (click)="itemOperate('delete', data, tplTitle, tplContent, tplFooter)">删除</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

@@ -1,0 +1,16 @@
+.editable-row-operations a {
+  margin-right: 8px;
+}
+
+.editable-position {
+  margin-top: 40px;
+}
+
+.row-position {
+  margin-top: 20px;
+}
+
+.searchbutton-position {
+  float: right;
+  width: 30%;
+}

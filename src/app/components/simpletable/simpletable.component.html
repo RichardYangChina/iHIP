@@ -1,0 +1,30 @@
+<nz-table #basicTable [nzData]="dataSet">
+  <thead>
+    <tr>
+      <th>系统图片</th>
+      <th>系统代码</th>
+      <th>系统名称</th>
+      <th>系统用途</th>
+      <th>厂商</th>
+      <th>启用状态</th>
+      <th>更新时间</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{data.systemImg}}</td>
+      <td>{{data.systemCode}}</td>
+      <td>{{data.systemName}}</td>
+      <td>{{data.systemPurpose}}</td>
+      <td>{{data.company}}</td>
+      <td>{{data.status}}</td>
+      <td>{{data.updateDate}}</td>
+      <td>
+        <a (click)="userAction('update')">修改</a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <a (click)="userAction('delete')">删除</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

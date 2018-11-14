@@ -1,0 +1,75 @@
+[
+    {
+        "systemName": "首页",
+        "systemCol": 0,
+        "display": "true",
+        "children": []
+    },
+    {
+        "systemName": "仪表盘",
+        "systemCol": 12,
+        "display": "true",
+        "children": []
+    },
+    {
+        "systemName": "UPV",
+        "systemCol": 6,
+        "display": "true",
+        "children": []
+    },
+    {
+        "systemName": "平台管理",
+        "systemCol": 24,
+        "display": "true",
+        "children": []
+    },
+    {
+        "systemName": "监控平台",
+        "systemCol": 6,
+        "display": "true",
+        "children": []
+    },
+    {
+        "systemName": "共享文档管理",
+        "systemCol": 0,
+        "display": "true",
+        "children": [
+            {
+                "funcName": "文档浏览器",
+                "funcURL": ""
+            },
+            {
+                "funcName": "文档模板",
+                "funcURL": ""
+            },
+            {
+                "funcName": "可视化模板",
+                "funcURL": ""
+            },
+            {
+                "funcName": "CDA生成器文档配置",
+                "funcURL": ""
+            },
+            {
+                "funcName": "CDA生成器文档日志",
+                "funcURL": ""
+            },
+            {
+                "funcName": "文档校验",
+                "funcURL": ""
+            },
+            {
+                "funcName": "CDA反写CDR配置",
+                "funcURL": ""
+            },
+            {
+                "funcName": "CDA反写CDR日志",
+                "funcURL": ""
+            },
+            {
+                "funcName": "匿名化配置",
+                "funcURL": ""
+            }
+        ]
+    }
+]

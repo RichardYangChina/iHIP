@@ -1,0 +1,11 @@
+<div class="logo">
+  <nz-avatar nzIcon="anticon" nzSrc="./../../assets/imgs/user.png"></nz-avatar>
+</div>
+<ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
+  <li nz-submenu *ngFor="let menuItem of menuData">
+    <span title><i nz-icon type="appstore"></i><span class="nav-text">{{menuItem?.ParentNode}}</span></span>
+    <ul *ngFor="let childrenItem of menuItem?.ChildrenNodes">
+      <li nz-menu-item (click)="addNewTabs(childrenItem)">{{childrenItem?.Name}}</li>
+    </ul>
+  </li>
+</ul>

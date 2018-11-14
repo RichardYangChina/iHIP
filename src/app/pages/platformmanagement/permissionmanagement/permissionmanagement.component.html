@@ -1,0 +1,56 @@
+<div nz-row>
+  <div nz-col nzSpan="7" nzOffset="1">
+    <div nz-row>
+      <div nz-col nzSpan="24">
+        <h3>权限查询</h3>
+      </div>
+    </div>
+    <div nz-row>
+      <div nz-col nzSpan="24">
+        <nz-input-group [nzSuffix]="suffixTemplate" nzAddOnBefore="角色列表">
+          <nz-select style="width: 100%;" nzShowSearch nzAllowClear [(ngModel)]="roleValue">
+            <nz-option nzLabel="医生1" nzValue="医生1"></nz-option>
+            <nz-option nzLabel="系统管理员" nzValue="系统管理员"></nz-option>
+            <nz-option nzLabel="管理员" nzValue="管理员"></nz-option>
+          </nz-select>
+        </nz-input-group>
+        <ng-template #suffixTemplate><i nz-icon type="close-circle" (click)="username=null" *ngIf="username"></i></ng-template>
+      </div>
+      <div nz-col nzSpan="24" class="select-position">
+        <nz-input-group [nzSuffix]="suffixTemplate" nzAddOnBefore="资源类型">
+          <nz-select style="width: 100%;" nzShowSearch nzAllowClear [(ngModel)]="typeValue">
+            <nz-option nzLabel="前台资源" nzValue="前台资源"></nz-option>
+            <nz-option nzLabel="后台资源" nzValue="后台资源"></nz-option>
+            <nz-option nzLabel="单点登录资源" nzValue="单点登录资源"></nz-option>
+            <nz-option nzLabel="UPV" nzValue="UPV"></nz-option>
+          </nz-select>
+        </nz-input-group>
+        <ng-template #suffixTemplate><i nz-icon type="close-circle" (click)="username=null" *ngIf="username"></i></ng-template>
+      </div>
+      <div nz-col nzSpan="24" class="select-position">
+        <button nz-button nzType="primary" (click)="reset()" [nzLoading]="isReset" class="reset-position">重置</button>
+        <button nz-button nzType="primary" (click)="save()" [nzLoading]="isSave" class="save-position">保存</button>
+      </div>
+    </div>
+  </div>
+  <div nz-col nzSpan="14" nzOffset="2">
+    <nz-spin [nzSpinning]="isSpinning">
+      <nz-tree [nzData]="nodes" nzCheckable="true" nzMultiple="true" nzShowIcon="true" [nzCheckedKeys]="defaultCheckedKeys"
+        [nzExpandedKeys]="defaultExpandedKeys" [nzSelectedKeys]="defaultSelectedKeys" (nzClick)="nzEvent($event)"
+        (nzExpandChange)="nzEvent($event)" (nzCheckBoxChange)="nzEvent($event)">
+        <ng-template #nzTreeTemplate let-node>
+          <span class="custom-node" [class.active]="activedNode?.key===node.key">
+            <span *ngIf="!node.isLeaf">
+              <i class="anticon" [ngClass]="node.isExpanded ? 'anticon-folder-open' : 'anticon-folder'"></i>
+              <span class="folder-name tree-text-position">{{node.title}}</span>
+            </span>
+            <span *ngIf="node.isLeaf">
+              <i nz-icon type="file"></i>
+              <span class="file-name tree-text-position">{{node.title}}</span>
+            </span>
+          </span>
+        </ng-template>
+      </nz-tree>
+    </nz-spin>
+  </div>
+</div>

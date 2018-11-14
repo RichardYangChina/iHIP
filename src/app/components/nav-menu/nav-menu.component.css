@@ -1,0 +1,48 @@
+.title-position {
+    margin-top: -22px;
+    color: white;
+}
+
+.icon-size {
+    font-size: 25px;
+    color: white;
+    margin: 0;
+}
+
+.text-align {
+    text-align: center;
+}
+
+.background-color {
+    background: linear-gradient(#5b96d0, rgba(3, 74, 134, 0.8705882352941177))
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-position {
+    margin-left: 30%;
+}
+
+.person-style {
+    position: absolute;
+    top: 4px;
+    right: 0px;
+    color: white;
+    text-align: center;
+}
+
+.sso-style {
+    position: absolute;
+    top: 9px;
+    right: 110px;
+    color: white;
+    text-align: center;
+}
+
+.ssoicon-size {
+    font-size: 25px;
+    margin: 0;
+}

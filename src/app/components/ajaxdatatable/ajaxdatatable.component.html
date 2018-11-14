@@ -1,0 +1,43 @@
+
+    <nz-table
+      #ajaxTable
+      nzShowSizeChanger
+      [nzFrontPagination]="false"
+      [nzData]="dataSet"
+      [nzLoading]="loading"
+      [nzTotal]="total"
+      [(nzPageIndex)]="pageIndex"
+      [(nzPageSize)]="pageSize"
+      (nzPageIndexChange)="searchData()"
+      (nzPageSizeChange)="searchData(true)">
+      <thead (nzSortChange)="sort($event)" nzSingleSort>
+        <tr>
+          <th nzShowCheckbox [(nzChecked)]="allChecked" [nzIndeterminate]="indeterminate" (nzCheckedChange)="checkAll($event)"></th>
+          <th>场景代码</th>
+          <th>上游系统</th>
+          <th>下游系统</th>
+          <th nzShowSort nzSortKey="log_type"><span>异常类型</span></th>
+          <th nzShowSort nzSortKey="log_seq"><span>记录时刻</span></th>
+          <th nzShowSort nzSortKey="log_stute"><span>异常状态</span></th>
+          <th><span>阅读状态</span></th>
+          <th><span>备注</span></th>
+          <th nzShowSort nzSortKey="create_date"><span>创建时间</span></th>
+          <th nzShowSort nzSortKey="update_date"><span>更新时间</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of ajaxTable.data">
+          <td nzShowCheckbox [(nzChecked)]="data.checked" [nzDisabled]="data.disabled" (nzCheckedChange)="refreshStatus()"></td>
+          <td>{{data.log_scecode}}</td>
+          <td>{{data.log_sorcode}}</td>
+          <td>{{data.log_tarcode}}</td>
+          <td>{{data.log_type}}</td>
+          <td>{{data.log_seq}}</td>
+          <td>{{data.log_stute}}</td>
+          <td>{{data.read}}</td>
+          <td>-</td>
+          <td>{{data.create_date}}</td>
+          <td>{{data.update_date}}</td>
+        </tr>
+      </tbody>
+    </nz-table>

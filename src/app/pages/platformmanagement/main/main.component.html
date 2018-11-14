@@ -1,0 +1,83 @@
+<div nz-row>
+  <div nz-col nzSpan="24">
+    <h3>检索条件</h3>
+  </div>
+</div>
+<div nz-row>
+  <div nz-col nzSpan="8">
+    <nz-input-group nzAddOnBefore="上游系统">
+      <nz-select class="select-position" nzShowSearch nzAllowClear [(ngModel)]="selectedOS">
+        <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+        <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+        <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+      </nz-select>
+    </nz-input-group>
+  </div>
+  <div nz-col nzSpan="8">
+    <nz-input-group nzAddOnBefore="下游系统">
+      <nz-select class="select-position" nzShowSearch nzAllowClear [(ngModel)]="selectedOS">
+        <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+        <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+        <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+      </nz-select>
+    </nz-input-group>
+  </div>
+  <div nz-col nzSpan="8">
+    <nz-input-group nzAddOnBefore="异常类型">
+      <nz-select class="select-position" nzShowSearch nzAllowClear [(ngModel)]="selectedOS">
+        <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+        <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+        <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+      </nz-select>
+    </nz-input-group>
+  </div>
+</div>
+<div nz-row style="margin-top: 5px;">
+  <div nz-col nzSpan="8">
+    <nz-input-group nzAddOnBefore="记录时刻">
+      <nz-select class="select-position" nzShowSearch nzAllowClear [(ngModel)]="selectedOS">
+        <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+        <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+        <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+      </nz-select>
+    </nz-input-group>
+  </div>
+  <div nz-col nzSpan="8">
+    <nz-input-group nzAddOnBefore="信息类型">
+      <nz-select class="select-position" nzShowSearch nzAllowClear [(ngModel)]="selectedOS">
+        <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+        <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+        <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+      </nz-select>
+    </nz-input-group>
+  </div>
+  <div nz-col nzSpan="8">
+    <nz-input-group nzAddOnBefore="跟进状态">
+      <nz-select class="select-position" nzShowSearch nzAllowClear [(ngModel)]="selectedOS">
+        <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+        <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+        <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+      </nz-select>
+    </nz-input-group>
+  </div>
+</div>
+<div nz-row style="margin-top: 5px;">
+  <div nz-col nzSpan="8">
+    <nz-input-group nzAddOnBefore="创建时间">
+      <app-datapickerrange class="datapicker-position"></app-datapickerrange>
+    </nz-input-group>
+  </div>
+  <div nz-col nzSpan="8">
+    <nz-input-group nzAddOnBefore="日志索引">
+      <input style="width: 95%;margin-left: 3px;" nz-input placeholder="日志索引" [(ngModel)]="value">
+    </nz-input-group>
+  </div>
+  <div nz-col nzSpan="8"></div>
+</div>
+<div nz-row style="margin-top: 10px; text-align: center;">
+  <div nz-col nzSpan="16"></div>
+  <div nz-col nzSpan="8"><button nz-button nzType="primary" style="width: 70%;"><i nz-icon [type]="search" [theme]="outline"></i>搜素</button></div>
+</div>
+<div nz-row style="margin-top: 10px; text-align: center;">
+  <app-ajaxdatatable></app-ajaxdatatable>
+</div>

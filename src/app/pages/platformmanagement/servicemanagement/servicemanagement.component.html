@@ -1,0 +1,284 @@
+<div nz-row>
+  <div nz-col nzSpan="4">
+    <button nz-button nzType="primary" (click)="createTplModal(tplTitle, tplContent, tplFooter)">
+      <span>添加</span>
+    </button>
+    <ng-template #tplTitle>
+      <span>新增服务</span>
+    </ng-template>
+    <ng-template #tplContent>
+      <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+        <div nz-row>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label [nzSm]="7" nzFor="serviceName" nzRequired>
+                <span>
+                  服务名称
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="16">
+                <input nz-input id="serviceName" formControlName="serviceName">
+                <nz-form-explain *ngIf="validateForm.get('serviceName').dirty && validateForm.get('serviceName').errors">请输入服务名称！</nz-form-explain>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label [nzSm]="7" nzFor="serviceCode" nzRequired>
+                <span>
+                  服务代码
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="16">
+                <input nz-input id="serviceCode" formControlName="serviceCode">
+                <nz-form-explain *ngIf="validateForm.get('serviceCode').dirty && validateForm.get('serviceCode').errors">请输入服务代码！</nz-form-explain>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-row>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label [nzSm]="7" nzFor="system" nzRequired>
+                <span>
+                  所属系统
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="16">
+                <nz-select id="system" formControlName="system">
+                  <nz-option nzValue="YGXT" nzLabel="YGXT"></nz-option>
+                  <nz-option nzValue="HRP" nzLabel="HRP"></nz-option>
+                </nz-select>
+                <nz-form-explain *ngIf="validateForm.get('system').dirty && validateForm.get('system').errors">请选择所属系统！</nz-form-explain>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label [nzSm]="7" nzFor="msgFormat" nzRequired>
+                <span>
+                  消息格式
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="16">
+                <nz-select id="msgFormat" formControlName="msgFormat">
+                  <nz-option nzValue="HL7v3.X" nzLabel="HL7v3.X"></nz-option>
+                  <nz-option nzValue="HL7v2.7" nzLabel="HL7v2.7"></nz-option>
+                </nz-select>
+                <nz-form-explain *ngIf="validateForm.get('msgFormat').dirty && validateForm.get('msgFormat').errors">请选择消息格式！</nz-form-explain>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-row>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label [nzSm]="7" nzFor="serviceURL" nzRequired>
+                <span>
+                  服务URL
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="16">
+                <input nz-input id="serviceURL" formControlName="serviceURL">
+                <nz-form-explain *ngIf="validateForm.get('serviceURL').dirty && validateForm.get('serviceURL').errors">请输入服务URL！</nz-form-explain>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label [nzSm]="7" nzFor="protocolType" nzRequired>
+                <span>
+                  服务协议类别
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="16">
+                <nz-select id="protocolType" formControlName="protocolType">
+                  <nz-option nzValue="HTTP" nzLabel="HTTP"></nz-option>
+                  <nz-option nzValue="SOAP" nzLabel="SOAP"></nz-option>
+                </nz-select>
+                <nz-form-explain *ngIf="validateForm.get('protocolType').dirty && validateForm.get('protocolType').errors">请选择服务协议类别！</nz-form-explain>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-row>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label [nzSm]="7" nzFor="serviceMethodSpaceName" nzRequired>
+                <span>
+                  服务方法名称空间
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="16">
+                <input nz-input id="serviceMethodSpaceName" formControlName="serviceMethodSpaceName">
+                <nz-form-explain *ngIf="validateForm.get('serviceMethodSpaceName').dirty && validateForm.get('serviceMethodSpaceName').errors">请输入服务方法名称空间！</nz-form-explain>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label [nzSm]="7" nzFor="serviceParamSpaceName">
+                <span>
+                  服务参数名称空间
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="16">
+                <input nz-input id="serviceParamSpaceName" formControlName="serviceParamSpaceName">
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-row>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label [nzSm]="7" nzFor="serviceRequestMethod" nzRequired>
+                <span>
+                  服务请求方法
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="16">
+                <input nz-input id="serviceRequestMethod" formControlName="serviceRequestMethod">
+                <nz-form-explain *ngIf="validateForm.get('serviceRequestMethod').dirty && validateForm.get('serviceRequestMethod').errors">请输入服务请求方法！</nz-form-explain>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label [nzSm]="7" nzFor="serviceRequestParam" nzRequired>
+                <span>
+                  服务请求参数
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="16">
+                <input nz-input id="serviceRequestParam" formControlName="serviceRequestParam">
+                <nz-form-explain *ngIf="validateForm.get('serviceRequestParam').dirty && validateForm.get('serviceRequestParam').errors">请输入服务请求参数！</nz-form-explain>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-row>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label [nzSm]="7" nzFor="serviceResponseMethod" nzRequired>
+                <span>
+                  服务应答方法
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="16">
+                <input nz-input id="serviceResponseMethod" formControlName="serviceResponseMethod">
+                <nz-form-explain *ngIf="validateForm.get('serviceResponseMethod').dirty && validateForm.get('serviceResponseMethod').errors">请输入服务应答方法！</nz-form-explain>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label [nzSm]="7" nzFor="serviceResponseParam" nzRequired>
+                <span>
+                  服务应答参数
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="16">
+                <input nz-input id="serviceResponseParam" formControlName="serviceResponseParam">
+                <nz-form-explain *ngIf="validateForm.get('serviceResponseParam').dirty && validateForm.get('serviceResponseParam').errors">请输入服务应答参数！</nz-form-explain>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-row>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label [nzSm]="7" nzFor="status" nzRequired>
+                <span>
+                  启用状态
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="16">
+                <nz-select id="status" formControlName="status">
+                  <nz-option nzValue="启用" nzLabel="启用"></nz-option>
+                  <nz-option nzValue="禁用" nzLabel="禁用"></nz-option>
+                </nz-select>
+                <nz-form-explain *ngIf="validateForm.get('status').dirty && validateForm.get('status').errors">请选择启用状态！</nz-form-explain>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label [nzSm]="7" nzFor="timeout">
+                <span>
+                  超时时间
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="10">
+                <nz-input-number [nzMin]="100" [nzStep]="500" formControlName="timeout" id="timeout"></nz-input-number>
+              </nz-form-control>
+              <nz-form-control [nzSm]="7">
+                <button nz-button nzType="primary" [nzSize]="size"><i nz-icon type="sync" theme="outline"></i>测试</button>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-row>
+          <nz-form-item>
+            <nz-form-label [nzSm]="3" nzFor="comments">
+              <span>
+                备注
+              </span>
+            </nz-form-label>
+            <nz-form-control [nzSm]="21">
+              <textarea id="comments" formControlName="comments" rows="4" nz-input></textarea>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </form>
+    </ng-template>
+    <ng-template #tplFooter>
+      <button nz-button nzType="primary" (click)="destroyTplModal()" [nzLoading]="tplModalButtonLoading">提交</button>
+    </ng-template>
+  </div>
+  <div nz-col nzSpan="20">
+    <nz-input-group nzSearch nzSize="default" [nzSuffix]="suffixButton">
+      <input type="text" nz-input placeholder="搜索系统">
+    </nz-input-group>
+    <ng-template #suffixButton>
+      <button nz-button nzType="primary" nzSize="default" nzSearch>搜索</button>
+    </ng-template>
+  </div>
+</div>
+<div nz-row class="table-position">
+  <nz-table #basicTable [nzData]="dataSet">
+    <thead>
+      <tr>
+        <th>服务代码</th>
+        <th>服务名称</th>
+        <th>所属系统</th>
+        <th>消息格式</th>
+        <th>协议类别</th>
+        <th>服务UrL</th>
+        <th>启用状态</th>
+        <th>更新时间</th>
+        <th>更新人</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{data.servicecode}}</td>
+        <td>{{data.servicename}}</td>
+        <td>{{data.system}}</td>
+        <td>{{data.msgformat}}</td>
+        <td>{{data.protocoltype}}</td>
+        <td>{{data.serviceurl}}</td>
+        <td>{{data.status}}</td>
+        <td>{{data.updatedate}}</td>
+        <td>{{data.updateby}}</td>
+        <td>
+          <a (click)="itemOperate('update', data, tplTitle, tplContent, tplFooter)">修改</a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a (click)="itemOperate('delete', data, tplTitle, tplContent, tplFooter)">删除</a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a (click)="itemOperate('test', data, tplTitle, tplContent, tplFooter)">测试</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

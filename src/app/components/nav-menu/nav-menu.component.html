@@ -1,0 +1,57 @@
+<ul nz-menu [nzMode]="'horizontal'" class="background-color">
+  <li nz-menu-item class="text-align nav-position" nzSelected="true"><i nz-icon type="home" theme="outline" class="icon-size"></i>
+    <div class="title-position">首页</div>
+  </li>
+  <li nz-menu-item class="text-align"><i nz-icon type="dashboard" theme="outline" class="icon-size"></i>
+    <div class="title-position">仪表盘</div>
+  </li>
+  <li nz-menu-item class="text-align"><i nz-icon type="sliders" theme="outline" class="icon-size"></i>
+    <div class="title-position">UPV</div>
+  </li>
+  <li nz-menu-item class="text-align"><i nz-icon type="solution" theme="outline" class="icon-size"></i>
+    <div class="title-position">平台管理</div>
+  </li>
+  <li nz-menu-item class="text-align"><i nz-icon type="desktop" theme="outline" class="icon-size"></i>
+    <div class="title-position"><a href="http://47.100.64.197:8080/hiip-monitor/monitor/dist/monitor.html" target="_blank">监控平台</a></div>
+  </li>
+  <li nz-submenu class="text-align">
+    <span title><i nz-icon type="book" theme="outline" class="icon-size"></i>
+      <div class="title-position">共享文档管理</div>
+    </span>
+    <ul>
+      <li nz-menu-item>文档浏览器</li>
+      <li nz-menu-item>文档模板</li>
+      <li nz-menu-item>可视化模板</li>
+      <li nz-menu-item>CDA生成器文档配置</li>
+      <li nz-menu-item>CDA生成器文档日志</li>
+      <li nz-menu-item>文档校验</li>
+      <li nz-menu-item>CDA反写CDR配置</li>
+      <li nz-menu-item>CDA反写CDR日志</li>
+      <li nz-menu-item>匿名化配置</li>
+    </ul>
+  </li>
+</ul>
+<div class="sso-style">
+  <div nz-popover [nzContent]="contentTemplate" nzPlacement="bottomRight">
+    <i nz-icon type="solution" theme="outline" class="icon-size"></i>
+    <div>单点登录</div>
+  </div>
+  <ng-template #contentTemplate>
+    <nz-list [nzDataSource]="ssoData" [nzRenderItem]="item" [nzGrid]="{gutter: 2, span: 8}">
+      <ng-template #item let-item>
+        <nz-list-item [nzContent]="nzContent">
+          <ng-template #nzContent>
+            <div class="text-align" (click)="navSystem()">
+              <i nz-icon type="cluster" theme="outline" class="ssoicon-size"></i>
+              <p>{{item.systemName}}</p>
+            </div>
+          </ng-template>
+        </nz-list-item>
+      </ng-template>
+    </nz-list>
+  </ng-template>
+</div>
+<div class="person-style">
+  <nz-avatar nzSize="default" nzIcon="anticon anticon-user"></nz-avatar>
+  <div>Richard Yang</div>
+</div>

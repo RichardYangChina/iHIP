@@ -1,0 +1,110 @@
+[
+    {
+        "ParentNode": "平台管理",
+        "Icon": "",
+        "ChildrenNodes": [
+            {
+                "Name": "角色管理",
+                "Icon": "",
+                "url": "/roleManagement",
+                "outlet": "role"
+            },
+            {
+                "Name": "权限管理",
+                "Icon": "",
+                "url": "/authManagement",
+                "outlet": "auth"
+            },
+            {
+                "Name": "用户管理",
+                "Icon": "",
+                "url": "/userManagement",
+                "outlet": "user"
+            },
+            {
+                "Name": "系统管理",
+                "Icon": "",
+                "url": "/systemManagement",
+                "outlet": "system"
+            },
+            {
+                "Name": "服务管理",
+                "Icon": "",
+                "url": "/serviceManagement",
+                "outlet": "service"
+            },
+            {
+                "Name": "单点登录管理",
+                "Icon": "",
+                "url": "/ssoManagement",
+                "outlet": "sso"
+            },
+            {
+                "Name": "平台监控",
+                "Icon": "",
+                "url": "/platformManagement"
+            }
+        ]
+    },
+    {
+        "ParentNode": "总线管理",
+        "Icon": "",
+        "ChildrenNodes": [
+            {
+                "Name": "角色",
+                "Icon": "",
+                "url": "/role"
+            },
+            {
+                "Name": "事务",
+                "Icon": "",
+                "url": "/transaction"
+            },
+            {
+                "Name": "路由管理",
+                "Icon": "",
+                "url": "/routeManagement"
+            },
+            {
+                "Name": "发布管理",
+                "Icon": "",
+                "url": "/publishManagement"
+            },
+            {
+                "Name": "订阅管理",
+                "Icon": "",
+                "url": "/subscribeManagement"
+            }
+        ]
+    },
+    {
+        "ParentNode": "标准管理",
+        "Icon": "",
+        "ChildrenNodes": []
+    },
+    {
+        "ParentNode": "主数据管理",
+        "Icon": "",
+        "ChildrenNodes": []
+    },
+    {
+        "ParentNode": "患者主索引",
+        "Icon": "",
+        "ChildrenNodes": []
+    },
+    {
+        "ParentNode": "日志管理",
+        "Icon": "",
+        "ChildrenNodes": []
+    },
+    {
+        "ParentNode": "共享文档管理",
+        "Icon": "",
+        "ChildrenNodes": []
+    },
+    {
+        "ParentNode": "适配器管理",
+        "Icon": "",
+        "ChildrenNodes": []
+    }
+]

@@ -1,0 +1,62 @@
+[
+    {
+        "systemName": "ICCA麻醉术中",
+        "systemURL": "#",
+        "systemIcon": ""
+    },
+    {
+        "systemName": "BS模拟系统",
+        "systemURL": "#",
+        "systemIcon": ""
+    },
+    {
+        "systemName": "CS模拟",
+        "systemURL": "#",
+        "systemIcon": ""
+    },
+    {
+        "systemName": "ICHMXIMS",
+        "systemURL": "#",
+        "systemIcon": ""
+    },
+    {
+        "systemName": "ICHMXCELERA",
+        "systemURL": "#",
+        "systemIcon": ""
+    },
+    {
+        "systemName": "ICHMCDR",
+        "systemURL": "#",
+        "systemIcon": ""
+    },
+    {
+        "systemName": "PathQC",
+        "systemURL": "#",
+        "systemIcon": ""
+    },
+    {
+        "systemName": "HRP",
+        "systemURL": "#",
+        "systemIcon": ""
+    },
+    {
+        "systemName": "医院信息管理系统",
+        "systemURL": "#",
+        "systemIcon": ""
+    },
+    {
+        "systemName": "LIS_XUEKU",
+        "systemURL": "#",
+        "systemIcon": ""
+    },
+    {
+        "systemName": "影像归档和通信系统",
+        "systemURL": "#",
+        "systemIcon": ""
+    },
+    {
+        "systemName": "ICCA麻醉术后",
+        "systemURL": "#",
+        "systemIcon": ""
+    }
+]

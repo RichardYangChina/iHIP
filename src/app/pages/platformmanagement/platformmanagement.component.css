@@ -1,0 +1,30 @@
+:host ::ng-deep .trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color .3s;
+}
+
+:host ::ng-deep .trigger:hover {
+  color: #1890ff;
+}
+
+:host ::ng-deep .logo {
+  height: 32px;
+  margin: 16px;
+}
+
+:host ::ng-deep .ant-layout-sider-children {
+  overflow-y: scroll;
+  position: absolute;
+  width: 215px;
+}
+
+.collapsedbutton-position {
+  margin-left: 18px;
+}
+
+.sider-overflow {
+  overflow: hidden;
+}
