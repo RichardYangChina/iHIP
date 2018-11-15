@@ -1,5 +1,6 @@
 <ul nz-menu [nzMode]="'horizontal'" class="background-color">
-  <li nz-menu-item class="text-align nav-position" nzSelected="true"><i nz-icon type="home" theme="outline" class="icon-size"></i>
+  <li nz-menu-item class="text-align nav-position" routerLink="/dashboard" nzSelected="true"><i nz-icon type="home"
+      theme="outline" class="icon-size"></i>
     <div class="title-position">首页</div>
   </li>
   <li nz-menu-item class="text-align"><i nz-icon type="dashboard" theme="outline" class="icon-size"></i>
@@ -8,7 +9,7 @@
   <li nz-menu-item class="text-align"><i nz-icon type="sliders" theme="outline" class="icon-size"></i>
     <div class="title-position">UPV</div>
   </li>
-  <li nz-menu-item class="text-align"><i nz-icon type="solution" theme="outline" class="icon-size"></i>
+  <li nz-menu-item class="text-align" routerLink="/platform/main"><i nz-icon type="solution" theme="outline" class="icon-size"></i>
     <div class="title-position">平台管理</div>
   </li>
   <li nz-menu-item class="text-align"><i nz-icon type="desktop" theme="outline" class="icon-size"></i>

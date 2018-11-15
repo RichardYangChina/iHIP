@@ -3,13 +3,13 @@
     <app-menu [isCollapsed]="isCollapsed" (addNewTab)="newTab($event)"></app-menu>
   </nz-sider>
 
-  <nz-layout>
-    <nz-header style="background: #fff; padding:0;">
+  <nz-layout style="height: calc(100% - 70px)">
+    <!-- <nz-header style="background: #fff; padding:0;">
       <button nz-button [nzType]="'primary'" (click)="isCollapsed=!isCollapsed" class="collapsedbutton-position">
         <i class="anticon" [class.anticon-menu-unfold]="isCollapsed" [class.anticon-menu-fold]="!isCollapsed">
         </i>
       </button>
-    </nz-header>
+    </nz-header> -->
     <nz-content style="margin:24px 16px 0;">
       <nz-tabset [nzType]="'card'" [(nzSelectedIndex)]="index">
         <nz-tab *ngFor="let tab of tabs" [nzTitle]="titleTemplate">

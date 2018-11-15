@@ -28,3 +28,7 @@
 .sider-overflow {
   overflow: hidden;
 }
+
+:host ::ng-deep .ant-layout-sider {
+  background: linear-gradient(120deg, #1f5f52, #5983e8);
+}

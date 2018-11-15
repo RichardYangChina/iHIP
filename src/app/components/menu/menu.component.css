@@ -1,0 +1,9 @@
+ul {
+    background: rgba(39, 60, 125, 0);
+    color: white;
+}
+
+:host ::ng-deep .ant-menu-submenu>.ant-menu {
+    background: rgba(39, 60, 125, 0);
+    color: white;
+}

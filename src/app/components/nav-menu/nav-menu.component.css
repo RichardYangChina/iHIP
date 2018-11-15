@@ -14,7 +14,7 @@
 }
 
 .background-color {
-    background: linear-gradient(#5b96d0, rgba(3, 74, 134, 0.8705882352941177))
+    background: linear-gradient(120deg, #1f5f52, #5983e8);
 }
 
 a {
@@ -45,4 +45,8 @@ a {
 .ssoicon-size {
     font-size: 25px;
     margin: 0;
+}
+
+:host ::ng-deep .ant-menu-horizontal {
+    border-bottom: none;
 }
