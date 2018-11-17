@@ -7,7 +7,7 @@ import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PlatformmanagementComponent } from './pages/platformmanagement/platformmanagement.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +18,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { ChangeOutletDirective } from './directives/change-outlet.directive';
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     PageNotFoundComponent,
     ChangeOutletDirective,
     NavMenuComponent,
-    DashboardComponent
+    DashboardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     HttpClientModule,
     IconModule,
     AppRoutingModule,
-    PlatformManagementModule
+    PlatformManagementModule,
+    ReactiveFormsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
